@@ -1,0 +1,36 @@
+# Auto-generado por inferences_vad.sh
+# pause=0.7s | threshold=0.2 | step=1.0s
+type: "simulstream.server.speech_processors.simuleval_wrapper.SimulEvalWrapper"
+simuleval_agent: "vad_segmenter.baseline_vad.SeamlessM4TAgentWithVADSegmenter"
+
+latency_unit: "word"
+speech_chunk_size: 0.5
+detokenizer_type: "simuleval"
+
+config:
+  device: "cuda"
+  step_length: 1.0
+  max_unvoiced_length: 0.7
+  voice_threshold: 0.2
+  min_segment_length: 2.0
+  max_segment_length: 20.0
+  seamless_m4t_model: "facebook/seamless-m4t-v2-large"
+  seamless_m4t_tgt_lang: "deu"
+
+agent_args:
+  - "--step-length"
+  - "1.0"
+  - "--max-unvoiced-length"
+  - "0.7"
+  - "--voice-threshold"
+  - "0.2"
+  - "--min-segment-length"
+  - "2.0"
+  - "--max-segment-length"
+  - "20.0"
+  - "--seamless-m4t-model"
+  - "facebook/seamless-m4t-v2-large"
+  - "--seamless-m4t-tgt-lang"
+  - "deu"
+  - "--device"
+  - "cuda"

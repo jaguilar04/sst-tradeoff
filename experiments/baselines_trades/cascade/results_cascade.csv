@@ -1,0 +1,17 @@
+jsonl_file,long_yaal_nca,long_yaal_ca,bleu,chrf_pp,comet_xl
+cascade_step1.0_la1,4.23,9.35,24.84,51.20,0.728
+cascade_step1.0_la2,4.48,9.70,25.40,51.72,0.735
+cascade_step1.0_la5,5.94,13.06,24.97,51.52,0.731
+cascade_step1.0_la10,7.00,11.41,24.68,51.26,0.726
+cascade_step2.0_la1,6.15,11.67,25.70,52.28,0.742
+cascade_step2.0_la2,6.35,11.63,25.69,51.81,0.739
+cascade_step2.0_la5,6.78,12.44,26.11,52.17,0.748
+cascade_step2.0_la10,5.12,18.34,25.26,51.27,0.721
+cascade_step4.0_la1,8.38,14.50,26.11,52.08,0.731
+cascade_step4.0_la2,8.28,17.70,26.26,52.30,0.738
+cascade_step4.0_la5,9.38,14.44,26.21,52.19,0.736
+cascade_step4.0_la10,7.04,21.57,25.79,51.60,0.724
+cascade_step8.0_la1,NA,NA,NA,NA,NA
+cascade_step8.0_la2,NA,NA,NA,NA,NA
+cascade_step8.0_la5,NA,NA,NA,NA,NA
+cascade_step8.0_la10,NA,NA,NA,NA,NA

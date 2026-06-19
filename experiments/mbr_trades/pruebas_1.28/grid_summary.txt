@@ -1,0 +1,21 @@
+Grid MBR: seg=1.28s, epsilon=0.02
+Inicio: mar 02 jun 2026 22:00:39 CEST
+
+METHOD                    N      STATUS     SALIDA
+────────────────────────────────────────────────────────────
+rambr_chrf                4      FAIL       exit=1
+rambr_chrf                8      SKIP       /data/jagucam1@alumno.upv.es/MAIN/experiments/mbr_trades/pruebas_1.28/rambr_chrf/inferences/mbr_rambr_chrf_n8_seg1280.jsonl
+rambr_chrf                16     SKIP       /data/jagucam1@alumno.upv.es/MAIN/experiments/mbr_trades/pruebas_1.28/rambr_chrf/inferences/mbr_rambr_chrf_n16_seg1280.jsonl
+rambr_chrf                32     FAIL       exit=1
+prunembr_xcomet           4      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/mbr_trades/pruebas_1.28/prunembr_xcomet/inferences/mbr_prunembr_xcomet_n4_seg1280.jsonl
+prunembr_xcomet           8      SKIP       /data/jagucam1@alumno.upv.es/MAIN/experiments/mbr_trades/pruebas_1.28/prunembr_xcomet/inferences/mbr_prunembr_xcomet_n8_seg1280.jsonl
+prunembr_xcomet           16     SKIP       /data/jagucam1@alumno.upv.es/MAIN/experiments/mbr_trades/pruebas_1.28/prunembr_xcomet/inferences/mbr_prunembr_xcomet_n16_seg1280.jsonl
+prunembr_xcomet           32     SKIP       /data/jagucam1@alumno.upv.es/MAIN/experiments/mbr_trades/pruebas_1.28/prunembr_xcomet/inferences/mbr_prunembr_xcomet_n32_seg1280.jsonl
+rerank_kiwi               4      FAIL       exit=1
+rerank_kiwi               8      SKIP       /data/jagucam1@alumno.upv.es/MAIN/experiments/mbr_trades/pruebas_1.28/rerank_kiwi/inferences/mbr_rerank_kiwi_n8_seg1280.jsonl
+rerank_kiwi               16     SKIP       /data/jagucam1@alumno.upv.es/MAIN/experiments/mbr_trades/pruebas_1.28/rerank_kiwi/inferences/mbr_rerank_kiwi_n16_seg1280.jsonl
+rerank_kiwi               32     FAIL       exit=1
+
+────────────────────────────────────────────────────────────
+Fin: mié 03 jun 2026 01:01:12 CEST
+OK=1, SKIP=7, FAIL=4

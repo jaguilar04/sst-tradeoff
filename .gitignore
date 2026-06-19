@@ -1,0 +1,13 @@
+/env/
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Pytest cache
+.pytest_cache/
+
+# MyPy cache
+.mypy_cache/

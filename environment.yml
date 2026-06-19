@@ -1,0 +1,13 @@
+name: bthesis
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - -e simulstream/
+    - -r requirements.txt

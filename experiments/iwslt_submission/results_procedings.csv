@@ -1,0 +1,8 @@
+regime,team,bleu,comet,streamlaal_nca,streamlaal_nca_par
+Low-Latency,NAIST,20.85,0.680,1.82,-
+Low-Latency,OSU,22.04,0.708,1.73,2.47
+Low-Latency,CMU,22.63,0.697,1.47,1.81
+High-Latency,NAIST,24.58,0.717,3.71,-
+High-Latency,OSU,25.80,0.729,3.21,4.41
+High-Latency,UPV,29.81,0.739,2.90,3.37
+High-Latency,CUNI,35.25,0.790,3.32,-

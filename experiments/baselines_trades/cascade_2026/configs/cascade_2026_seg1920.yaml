@@ -1,0 +1,14 @@
+type: "cascade_2026.agent_simulstream.CascadeSpeechProcessor"
+speech_chunk_size: 1.92
+latency_unit: "word"
+detokenizer_type: "simuleval"
+asr_model_name: "Qwen/Qwen3-ASR-1.7B"
+llm_model_name: "Qwen/Qwen3-4B-Instruct-2507"
+source_lang: "English"
+target_lang: "German"
+min_start_seconds: 5.0
+max_history_utterances: 0
+max_new_tokens: 100
+temperature: 0.0
+repetition_penalty: 1.05
+ner_results_path: null

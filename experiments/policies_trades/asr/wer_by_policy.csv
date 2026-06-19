@@ -1,0 +1,8 @@
+policy,param,wer
+local_agreement,,0.065005
+tolerant_agreement,1,0.066508
+tolerant_agreement,2,0.067260
+tolerant_agreement,3,0.067385
+hold_n,1,0.254259
+hold_n,2,0.131263
+hold_n,4,0.085922

@@ -1,0 +1,5 @@
+/data/jagucam1@alumno.upv.es/MAIN/data/test/wavs/2022.acl-long.111.wav
+/data/jagucam1@alumno.upv.es/MAIN/data/test/wavs/2022.acl-long.410.wav
+/data/jagucam1@alumno.upv.es/MAIN/data/test/wavs/2022.acl-long.468.wav
+/data/jagucam1@alumno.upv.es/MAIN/data/test/wavs/2022.acl-long.567.wav
+/data/jagucam1@alumno.upv.es/MAIN/data/test/wavs/2022.acl-long.597.wav

@@ -1,0 +1,73 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# Requirements — Simultaneous Speech Translation (SimulST)
+# Bachelor's Thesis: Latency–Quality Trade-offs in Streaming En→De Translation
+#
+# Installation:
+#   pip install -e simulstream/
+#   pip install -r requirements.txt
+#
+# For GPU (CUDA 12.x):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+#   pip install vllm   # requires CUDA >= 11.8 and a compatible GPU
+#
+# Note: vLLM has strict CUDA and GPU memory requirements. See https://docs.vllm.ai
+# ══════════════════════════════════════════════════════════════════════════════
+
+
+# ── Core deep learning ────────────────────────────────────────────────────────
+torch>=2.1                  # Main deep learning framework (GPU recommended)
+transformers>=4.40          # Hugging Face model hub — ASR and MT models
+huggingface-hub>=0.22       # Model download and caching
+sentencepiece               # Tokenizer backend (m2m100, NLLB, etc.)
+protobuf                    # Required by many HuggingFace tokenizers
+numpy
+
+
+# ── ASR ───────────────────────────────────────────────────────────────────────
+openai-whisper              # Whisper ASR (cascade baseline)
+qwen-asr                    # Qwen3-ASR (cascade 2026 system)
+
+
+# ── LLM inference (cascade 2026) ─────────────────────────────────────────────
+vllm>=0.4                   # High-throughput vLLM engine for Qwen3 MT
+openai                      # OpenAI-compatible client used with the vLLM server
+
+
+# ── MT quality evaluation ─────────────────────────────────────────────────────
+sacrebleu>=2.3              # BLEU (detokenized, reproducible)
+fastchrf>=0.1               # chrF++ (fast implementation)
+unbabel-comet>=2.2          # COMET-XL / XCOMET-XL neural quality metric
+bert-score                  # BERTScore (auxiliary metric)
+bleurt-pytorch              # BLEURT (auxiliary metric)
+
+
+# ── Audio I/O and processing ──────────────────────────────────────────────────
+soundfile                   # Read/write WAV and FLAC files
+pydub                       # Audio format conversion and manipulation
+yt-dlp                      # Download audio from YouTube (data collection)
+
+
+# ── Data and configuration ────────────────────────────────────────────────────
+pyyaml                      # YAML config files (per-experiment configs)
+simple-parsing              # Dataclass-based argument parsing
+jsonargparse                # JSON/YAML argument parsing (simulstream)
+tabulate                    # Pretty-print result tables
+
+
+# ── Scientific computing and analysis ────────────────────────────────────────
+scipy
+pandas                      # Load and manipulate results CSVs
+matplotlib                  # Latency–quality trade-off plots
+
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+tqdm                        # Progress bars
+requests                    # HTTP requests
+bitarray                    # Bit-level data structures
+textgrid                    # Parse Praat TextGrid files (alignment)
+
+
+# ── Testing and development ───────────────────────────────────────────────────
+pytest
+pytest-cov                  # Coverage reports
+pytest-flake8               # Linting via pytest

@@ -1,0 +1,41 @@
+Grid políticas ASR: seg=0.96s, partial-MBR, epsilon=0.02
+
+POLICY_TAG                   METHOD           N      STATUS     SALIDA
+────────────────────────────────────────────────────────────
+Inicio: sáb 06 jun 2026 22:13:45 CEST
+
+POLICY_TAG                   METHOD           N      STATUS     SALIDA
+────────────────────────────────────────────────────────────
+local_agreement              rambr_chrf       8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/local_agreement/inferences/asr_local_agreement_rambr_chrf_n8_seg960.jsonl
+tolerant_tau1                rambr_chrf       8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau1_rambr_chrf_n8_seg960.jsonl
+local_agreement              prunembr_xcomet  8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/local_agreement/inferences/asr_local_agreement_prunembr_xcomet_n8_seg960.jsonl
+tolerant_tau1                prunembr_xcomet  8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau1_prunembr_xcomet_n8_seg960.jsonl
+hold_n1                      rambr_chrf       8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n1_rambr_chrf_n8_seg960.jsonl
+local_agreement              rerank_kiwi      8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/local_agreement/inferences/asr_local_agreement_rerank_kiwi_n8_seg960.jsonl
+
+────────────────────────────────────────────────────────────
+Fin: sáb 06 jun 2026 23:58:24 CEST
+OK=3, SKIP=0, FAIL=0
+tolerant_tau1                rerank_kiwi      8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau1_rerank_kiwi_n8_seg960.jsonl
+tolerant_tau2                rambr_chrf       8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau2_rambr_chrf_n8_seg960.jsonl
+hold_n1                      prunembr_xcomet  8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n1_prunembr_xcomet_n8_seg960.jsonl
+tolerant_tau2                prunembr_xcomet  8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau2_prunembr_xcomet_n8_seg960.jsonl
+tolerant_tau2                rerank_kiwi      8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau2_rerank_kiwi_n8_seg960.jsonl
+hold_n1                      rerank_kiwi      8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n1_rerank_kiwi_n8_seg960.jsonl
+tolerant_tau3                rambr_chrf       8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau3_rambr_chrf_n8_seg960.jsonl
+hold_n2                      rambr_chrf       8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n2_rambr_chrf_n8_seg960.jsonl
+tolerant_tau3                prunembr_xcomet  8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau3_prunembr_xcomet_n8_seg960.jsonl
+tolerant_tau3                rerank_kiwi      8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/tolerant_agreement/inferences/asr_tolerant_tau3_rerank_kiwi_n8_seg960.jsonl
+
+────────────────────────────────────────────────────────────
+Fin: dom 07 jun 2026 03:29:39 CEST
+OK=9, SKIP=0, FAIL=0
+hold_n2                      prunembr_xcomet  8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n2_prunembr_xcomet_n8_seg960.jsonl
+hold_n2                      rerank_kiwi      8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n2_rerank_kiwi_n8_seg960.jsonl
+hold_n4                      rambr_chrf       8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n4_rambr_chrf_n8_seg960.jsonl
+hold_n4                      prunembr_xcomet  8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n4_prunembr_xcomet_n8_seg960.jsonl
+hold_n4                      rerank_kiwi      8      OK         /data/jagucam1@alumno.upv.es/MAIN/experiments/policies_trades/asr/hold_n/inferences/asr_hold_n4_rerank_kiwi_n8_seg960.jsonl
+
+────────────────────────────────────────────────────────────
+Fin: dom 07 jun 2026 06:45:50 CEST
+OK=9, SKIP=0, FAIL=0

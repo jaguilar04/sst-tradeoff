@@ -1,0 +1,34 @@
+type: "cascade_2026.agent_simulstream_asr_policies.CascadeSpeechProcessor"
+speech_chunk_size: 0.96
+latency_unit: "word"
+detokenizer_type: "simuleval"
+
+# Modelos
+asr_model_name: "Qwen/Qwen3-ASR-1.7B"
+llm_model_name: "Qwen/Qwen3-4B-Instruct-2507"
+asr_gpu_memory_utilization: 0.36
+llm_gpu_memory_utilization: 0.36
+
+# Idiomas
+source_lang: "English"
+target_lang: "German"
+
+# Segmentación
+min_start_seconds: 5.0
+max_history_utterances: 0
+
+# Generación LLM: greedy puro, una sola muestra, sin epsilon ni MBR
+max_new_tokens: 100
+temperature: 0.0
+repetition_penalty: 1.05
+epsilon: 0.0
+n_samples: 1
+decoding_method: "none"
+
+# Política de emisión de ASR: local agreement estricto (= cascade base).
+# El transcript log permite calcular WER también en el baseline.
+asr_policy: "local_agreement"
+asr_transcript_log: "/data/jagucam1@alumno.upv.es/MAIN/experiments/iwslt_submission/baseline/transcripts/iwslt_baseline.transcript.jsonl"
+
+# Contexto externo
+ner_results_path: null
