@@ -1,4 +1,11 @@
 /env/
+
+# Jupyter notebooks
+*.ipynb
+
+# Generated plots
+*.eps
+
 # Python cache
 __pycache__/
 *.py[cod]

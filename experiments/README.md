@@ -6,8 +6,6 @@ This directory contains all experiment configurations, inference outputs, evalua
 Config (YAML) → Inference (JSONL) → Evaluation → Results (CSV)
 ```
 
-The Jupyter notebook [`experiments_visuals.ipynb`](experiments_visuals.ipynb) loads all CSV files and produces the trade-off plots used in the thesis.
-
 ---
 
 ## Directory Structure
@@ -46,7 +44,6 @@ experiments/
 │       ├── hybrid_waitk_tla/
 │       └── tolerant_agreement/
 │
-└── experiments_visuals.ipynb # Analysis and plotting notebook
 ```
 
 Each experiment subfolder has the same internal layout:
@@ -88,25 +85,15 @@ python -m simulstream.inference \
 
 Once inference outputs are ready, the `evaluations_*.sh` script:
 1. Iterates over all JSONL files in `inferences/`.
-2. Runs OmniSTEval to compute StreamLAAL (NCA/CA) and LongYAAL.
+2. Runs OmniSTEval to compute LongYAAL.
 3. Runs SacreBLEU for BLEU and chrF++.
-4. Runs COMET-XL for neural quality scores.
+4. Runs xCOMET-XL for neural quality scores.
 5. Writes per-run results to `results/<run_name>/` and aggregates into `results_*.csv`.
 
 ```bash
 cd experiments/baselines_trades/cascade
 sbatch evaluations_cascade.sh
 ```
-
-### Stage 3 — Visualization
-
-Open the notebook and run all cells:
-
-```bash
-jupyter notebook experiments/experiments_visuals.ipynb
-```
-
-The notebook reads all `results_*.csv` files, produces latency–quality scatter plots, and exports figures to [`eps/experiments/`](../eps/experiments/).
 
 ---
 

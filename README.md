@@ -1,10 +1,10 @@
-# Simultaneous Speech Translation: Latency–Quality Trade-offs
+# Dynamic Optimization of the Latency-Quality Trade-Off in Streaming Speech Translation
 
-> Bachelor's Thesis — Exploring decoding policies and MBR-based strategies for streaming English→German speech translation.
+> Bachelor's Thesis
 
-This repository contains the full experimental pipeline for a Bachelor's thesis on **simultaneous speech-to-text translation (SimulST)**. The work investigates how different segmentation strategies, ASR emission policies, MT decoding policies, and Minimum Bayes Risk (MBR) re-ranking affect the trade-off between **translation latency** and **translation quality** in a cascade streaming system.
+This repository contains the full experimental pipeline for a Bachelor's thesis on **Simultaneous Speech-to-text Translation (SST)**. The work investigates how different segmentation strategies, ASR emission policies, MT decoding policies, and Minimum Bayes Risk (MBR) re-ranking affect the trade-off between **translation latency** and **translation quality** in a cascade streaming system.
 
-The system was also submitted to the **[IWSLT 2025](https://iwslt.org/)** shared task on simultaneous speech translation.
+The system was also submitted to the **[IWSLT 2025](https://iwslt.org/2025/simultaneous)** shared task on simultaneous speech translation.
 
 ---
 
@@ -14,7 +14,7 @@ The pipeline follows a **cascade architecture**: an ASR module transcribes incom
 
 **Languages:** English → German  
 **Data:** ACL 2022 conference talks (dev/test splits)  
-**Evaluation:** StreamLAAL, LongYAAL (latency) · BLEU, chrF++, COMET-XL (quality)
+**Evaluation:** LongYAAL (latency) · BLEU, chrF++, COMET, xCOMET-XL (quality)
 
 ---
 
@@ -83,7 +83,7 @@ See the [vLLM installation guide](https://docs.vllm.ai/en/latest/getting_started
 | `qwen-asr` | Qwen3-ASR (cascade 2026 system) |
 | `vllm` | High-throughput LLM inference for Qwen3 MT |
 | `sacrebleu`, `fastchrf` | BLEU and chrF++ evaluation |
-| `unbabel-comet` | COMET-XL / XCOMET-XL neural quality metric |
+| `unbabel-comet` | COMET / XCOMET-XL neural quality metric |
 | `soundfile`, `pydub` | Audio I/O and format conversion |
 | `pandas`, `matplotlib` | Results analysis and visualization |
 
@@ -120,16 +120,16 @@ Three baseline segmentation strategies are compared:
 
 | System | Segmenter | ASR | MT |
 |---|---|---|---|
-| **Cascade** | Fixed-length (variable step) | Whisper small | m2m100\_418M |
+| **Cascade** | Fixed-length (variable step) | Whisper | M2M100\_418M |
 | **Fixed** | Fixed-chunk | SeamlessM4T | SeamlessM4T |
 | **VAD** | Voice Activity Detection | SeamlessM4T | SeamlessM4T |
-| **Cascade 2026** | Fixed-length (variable seg) | Qwen3ASR | vLLM |
+| **Cascade 2026** | Fixed-length (variable seg) | Qwen3 ASR | Qwen3 MT |
 
 Advanced variants tested on top of Cascade 2026:
 
-- **MBR decoding** — full, partial, and epsilon variants with XCOMET, chrF, and KIWI ranking
-- **ASR policies** — Hold-N, Local Agreement, Tolerant Agreement
-- **MT policies** — Wait-K, Hybrid Wait-K/TLA, Local Agreement, Tolerant Agreement
+- **MBR decoding** — full, partial, and epsilon variants with xCOMET-XL, chrF, and KIWI ranking
+- **ASR policies** — Hold-N, LCP, RLA
+- **MT policies** — Wait-K, Hybrid Wait-K/TLA, LCP, RLA
 
 ---
 
@@ -137,35 +137,10 @@ Advanced variants tested on top of Cascade 2026:
 
 | Metric | Type | Description |
 |---|---|---|
-| **StreamLAAL (NCA)** | Latency | Segment-level latency, no computational overhead |
-| **StreamLAAL (CA)** | Latency | Computational-aware latency |
-| **LongYAAL** | Latency | Word-level average lagging (OmniSTEval) |
+| **LongYAAL (NCA)** | Latency | LongYAAL without computational overhead (ideal delays) |
+| **LongYAAL (CA)** | Latency | LongYAAL with computation time included |
 | **BLEU** | Quality | n-gram precision (SacreBLEU) |
 | **chrF++** | Quality | Character n-gram F-score with word order |
-| **COMET-XL** | Quality | Neural reference-based quality (Unbabel XCOMET-XL) |
+| **xCOMET-XL** | Quality | Neural reference-based quality (Unbabel xCOMET-XL) |
 
 ---
-
-## Results Visualization
-
-Open the analysis notebook:
-
-```bash
-jupyter notebook experiments/experiments_visuals.ipynb
-```
-
-It loads all CSV result files, produces latency–quality trade-off plots, and generates the figures used in the thesis.
-
----
-
-## IWSLT 2025 Submission
-
-The IWSLT 2025 submission runs are in [`experiments/iwslt_submission/`](experiments/iwslt_submission/). Three system variants were submitted: `baseline`, `low_latency`, and `high_latency`.
-
-![IWSLT 2025 StreamLAAL results](experiments/iwslt_submission/iwslt25_streamlaal_2panel.png)
-
----
-
-## Acknowledgements
-
-This work builds on the [SimulStream](simulstream/) open-source streaming translation framework and uses evaluation tools from [OmniSTEval](https://github.com/hlt-mt/OmniSTEval), [SacreBLEU](https://github.com/mjpost/sacrebleu), and [Unbabel COMET](https://github.com/Unbabel/COMET).
